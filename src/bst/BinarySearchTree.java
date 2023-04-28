@@ -174,6 +174,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		}
 		inOrderRecurese(node.rightChild);
 		
+		
 =======
 		System.out.println("not done");
 >>>>>>> origin/main
@@ -183,17 +184,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		Stack<BSTNode<T>> in = new Stack<BSTNode<T>>();
 <<<<<<< HEAD
 		
-		while (!in.isEmpty)
-		{
-			while (in.rightChild != null)
-			{
-				
-			}
-			BSTNode current = root.rightChild;
-			if (current.rightChild != null)
-			{
-				
-			}
+	
 		}
 		
 =======
