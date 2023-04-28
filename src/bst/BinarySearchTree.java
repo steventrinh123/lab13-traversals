@@ -8,7 +8,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		private T data;
 		private BSTNode<T> leftChild;
 		private BSTNode<T> rightChild;
-		
+		//test
 		public BSTNode(T data) {
 			this.data = data;
 		}
@@ -17,7 +17,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			return data.toString();
 		}
 	}
-	
+	//h
 	private BSTNode<T> root;
 	
 	public void insert(T data) {
@@ -137,14 +137,34 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	//For a bst this will print the values in sorted order from smallest to largest
 	public void inOrder() {
 		inOrderRecurse(root); 
+		System.out.println("InOrder test commit");
 	}
 	
 	public void inOrderRecurse(BSTNode<T> node) {
+		inOrderRecurse(node.leftChild);
+		if (node != null)
+		{
+			System.out.println(node.data);
+		}
+		inOrderRecurese(node.rightChild);
 		
 	}
 	//Traverse the tree in an inorder fashion but using a stack
 	public void inOrderStack() {
 		Stack<BSTNode<T>> in = new Stack<BSTNode<T>>();
+		
+		while (!in.isEmpty)
+		{
+			while (in.rightChild != null)
+			{
+				
+			}
+			BSTNode current = root.rightChild;
+			if (current.rightChild != null)
+			{
+				
+			}
+		}
 		
 		
 	}
