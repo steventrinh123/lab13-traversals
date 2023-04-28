@@ -142,6 +142,10 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			{
 				pre.push(curr.rightChild);
 			}
+			if (curr.leftChild != null);
+			{
+				pre.push(curr.leftChild);
+			}
 		}
 	}
 		
