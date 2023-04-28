@@ -123,10 +123,16 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	private void preOrderRecurse(BSTNode<T> node) {
 		if (node != null)
 		{
-			System.out.println(node.data);
+			System.out.print(node + " ");
 		}
-		preOrderRecurse(node.leftChild);
-		preOrderRecurse(node.rightChild);
+		if (node.leftChild != null)
+		{
+			preOrderRecurse(node.leftChild);
+		}
+		if (node.rightChild != null)
+		{
+			preOrderRecurse(node.rightChild);
+		}
 	}
 	
 	//Traverse the tree in an preorder fashion but using a stack
@@ -137,12 +143,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
 		while (!pre.isEmpty())
 		{
 			BSTNode<T> curr = pre.pop();
-			System.out.println(curr.data);
+			System.out.print(curr + " ");
 			if (curr.rightChild != null)
 			{
 				pre.push(curr.rightChild);
 			}
-			if (curr.leftChild != null);
+			if (curr.leftChild != null)
 			{
 				pre.push(curr.leftChild);
 			}
@@ -159,7 +165,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	public void inOrderRecurse(BSTNode<T> node) {
-		
+		System.out.println("not done");
 	}
 	//Traverse the tree in an inorder fashion but using a stack
 	public void inOrderStack() {
@@ -177,7 +183,12 @@ public class BinarySearchTree<T extends Comparable<T>> {
 	}
 	
 	public void postOrderRecurse(BSTNode<T> node) {
-		
+		if (node != null)
+		{
+			postOrderRecurse(node.leftChild);
+			postOrderRecurse(node.rightChild);
+			System.out.print(node + " ");
+		}
 	}
 	
 	//Traverse the tree in an postorder fashion uses Stacks. 
@@ -191,7 +202,18 @@ public class BinarySearchTree<T extends Comparable<T>> {
 			postHelper.push(root);
 			while(!postHelper.isEmpty()) {
 				//how should post and postHelper be updated?
+				BSTNode<T> curr = postHelper.pop();
+				post.push(curr);
+				if (curr.leftChild != null)
+				{
+					postHelper.push(curr.leftChild);
+				}
+				if (curr.rightChild != null)
+				{
+					postHelper.push(curr.rightChild);
+				}
 			}
+				
 			
 			while(!post.isEmpty()) {
 				BSTNode<T> node = post.pop();
